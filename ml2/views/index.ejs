@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mercado Liebre Argentina</title>
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+	<!-- Header -->
+	<header class="main-header">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-5 col-md-2">
+					<a href="/" class="main-header_home-link">
+						<img src="/images/logo-mercado-liebre.svg">
+					</a>
+				</div>
+
+				<div class="col-7 col-md-6">
+					<form action="" method="get" class="search-form">
+						<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
+						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+
+				<div class="col-12 col-md-4">
+					<a href="#" class="main-header_credit-link">
+						<i class="fas fa-hand-holding-usd"></i>
+						Comprá en cuotas y sin tarjeta de crédito
+					</a>
+				</div>
+			</div>
+
+			<button class="btn-toggle-navbar">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<nav class="main-navbar">
+				<ul class="left-navbar">
+					<li><a href="#">Ofertas</a></li>
+					<li><a href="#">Tiendas Oficiales</a></li>
+					<li><a href="#">Vender</a></li>
+					<li><a href="#">Ayuda</a></li>
+				</ul>
+
+				<ul class="right-navbar">
+					<li><a href="#">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
+					<li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+					<li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+
+	<!-- ultima visita -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Basado en tu última visita</h2>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="">
+						<figure class="product-box_image">
+							<img src="/images/img-cafetera-moulinex.jpg" alt="imagen de producto">
+						</figure>
+						<article class="product-box_data">
+							<h2>$6.770</h2>
+							<span>40% OFF</span>
+							<p>Cafetera Moulinex Dolce Gusto Lorem ipsum, dolor sit amet.</p>
+							<i class="fas fa-truck"></i>
+						</article>
+					</a>
+				</section>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="">
+						<figure class="product-box_image">
+							<img src="/images/img-macbook-pro-2019.jpg" alt="imagen de producto">
+						</figure>
+						<article class="product-box_data">
+							<h2>$150.970</h2>
+							<span>10% OFF</span>
+							<p>Macbook Pro 2019 Lorem ipsum, dolor sit amet.</p>
+							<i class="fas fa-truck"></i>
+						</article>
+					</a>
+				</section>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="">
+						<figure class="product-box_image">
+							<img src="/images/img-tv-samsung-smart.jpg" alt="imagen de producto">
+						</figure>
+						<article class="product-box_data">
+							<h2>$54.230</h2>
+							<p>Televisor Samsung Smart TV Lorem ipsum, dolor sit amet.</p>
+							<i class="fas fa-truck"></i>
+						</article>
+					</a>
+				</section>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="">
+						<figure class="product-box_image">
+							<img src="/images/img-samsung-galaxy-s10.jpg" alt="imagen de producto">
+						</figure>
+						<article class="product-box_data">
+							<h2>$89.410</h2>
+							<span>20% OFF</span>
+							<p>Samsung Galaxy s10 Lorem ipsum, dolor sit amet.</p>
+							<i class="fas fa-truck"></i>
+						</article>
+					</a>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- /ultima visita -->
+
+	<!-- Ofertas -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ofertas</h2>
+			</div>
+
+			<% productosEnOferta.forEach(producto => {%>
+			
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="">
+						<figure class="product-box_image">
+							<img src="<%= rutaDeImagen %>" alt="imagen de producto">
+						</figure>
+						<article class="product-box_data">
+							<h2><%= productosEnOferta.price %></h2>
+							<span><%= productosEnOferta.discount %> % OFF</span>
+							<p> <%= productosEnOferta.name %> <%= productosEnOferta.description %></p>
+							<i class="fas fa-truck"></i>
+						</article>
+					</a>
+				</section>
+			</div>
+
+			<% }) %>	
+		</div>
+	</div>
+	<!-- /Ofertas -->
+
+	<!-- footer -->
+	<footer class="main-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-4">
+					<article class="footer-data">
+						<i class="fas fa-credit-card"></i>
+						<h2>Pagá con tarjeta o en efectivo</h2>
+						<p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>	
+					</article>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="footer-data">
+						<i class="fas fa-gift"></i>
+						<h2>Envío gratis desde $ 1.999</h2>
+						<p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>	
+					</article>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="footer-data">
+						<i class="fas fa-user-shield"></i>
+						<h2>Seguridad, de principio a fin</h2>
+						<p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>	
+					</article>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="sub-footer">
+		<div class="container">
+			<p>Copyright © 1999-2019 MercadoLiebre S.R.L.</p>
+		</div>
+	</div>
+	<!-- /footer -->
+</body>
+</html>
